@@ -1,1 +1,6 @@
 # Introduction {-}
+
+In order to provide, on average, the most current medical care doctors are
+advised to align their clinical practice with the results of well-conducted
+clinical trials, or the aggregation of the results from multiple such trials
+[Greenfield 2007].
