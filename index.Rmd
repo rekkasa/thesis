@@ -1,0 +1,24 @@
+--- 
+title: "Thesis draft"
+author: Alexandros Rekkas
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl
+---
+
+# Preface {-}
+
+
+Thesis
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
