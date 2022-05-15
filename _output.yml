@@ -3,9 +3,9 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Thesis draft</a></li>
+        <li><a href="./">Thesis</a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["pdf", "epub"]
+    download: ["pdf"]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

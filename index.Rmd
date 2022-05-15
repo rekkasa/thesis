@@ -1,5 +1,6 @@
 --- 
-title: "Thesis draft"
+title: "Assessing treatment effect heterogeneity using baseline risk"
+subtitle: "Methodology and applications"
 author: Alexandros Rekkas
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

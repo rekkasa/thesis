@@ -1,0 +1,169 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Assessing treatment effect heterogeneity using baseline risk},
+  pdfauthor={Alexandros Rekkas},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assessing treatment effect heterogeneity using baseline risk}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Methodology and applications}
+\author{Alexandros Rekkas}
+\date{2022-05-15}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+Thesis
+
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
+\addcontentsline{toc}{chapter}{Introduction}
+
+In order to provide---on average---the most current medical care doctors are
+advised to align their clinical practice with the results of well-conducted
+clinical trials, or the aggregation of the results from multiple such trials
+{[}Greenfield 2007{]}. This approach implicitly assumes that all patients eligible
+for treatment similarly experience the benefits and harms of treatment of the
+reference trial population. Therefore, at a certain point, the accurate
+estimation of these average effects became crucial, transforming clinical trials
+from tools for assessing causality into tools for predicting patient-level
+treatment effects. When the strong positive overall effects derived from
+clinical trials could not be achieved in medical practice, the problem was
+attributed to the reference trial population being too narrow and not
+representing the ``average'' patient requiring treatment. Therefore the need for
+more pragmatic clinical trials incorporating broad patient populations was
+highlighted {[}Treweek, Trials 2009; \ldots{]}.
+
+The wider clinical trial populations ensure that overall results will be
+generalizable to the ``real-life'' patients. However, generalizability comes at a
+cost: wider range of included patients means higher variability of measured
+characteristics, therefore higher variability in disease severity is observed,
+which, in turn, translates to higher variability of observed treatment effect
+sizes. In short, the estimated treatment effect derived from such clinical
+trials is often an average of heterogeneous treatment effects and, as such, is
+not applicable to most patient subgroups. This means that a positive average
+treatment effect estimated from a clinical trial very often is only evidence
+that some of the enrollees benefitted from the intervention under study. If,
+however, the intervention is linked to a serious adverse event, treating
+everyone would result in serious harms for many patients, despite the positive
+overall effect.
+
+The identification and quantification of treatment effect heterogeneity (HTE),
+i.e.~the non-random variability in the magnitude or direction of a treatment
+effect across the levels of a covariate (single or combination of patient
+attributes) {[}refs{]}, is crucial for guiding medical decision-making. Despite HTE
+being widely anticipated, its evaluation is not straightforward. At the
+individual level HTE is unobservable as it requires knowledge of patient-level
+outcomes under all possible treatment assignments (fundamental problem of causal
+inference). The most common solution is, then, to assign the patient to a
+subgroup with similar anticipated treatment effect, assigning the subgroup-level
+effect estimate to the individual. Subgroup analyses have often been considered
+for the evaluation of HTE, where the clinical trial population is split into
+sub-populations based on the levels of a certain covariate, one at a
+time. However, as clinical trials are most often adequately powered to detect a
+certain overall effect size, these subgroup analyses usually are
+underpowered. This can lead to falsely claiming absence of HTE or overestimating
+its magnitude {[}refs{]}. In addition, contrary to subgroup analyses, patients
+differ with regard to many baseline covariates simultaneously {[}Kent, BMJ
+2018{]}. However, evaluation of two-way or higher order interactions becomes
+underpowered at an explonential rate.
+
+Kravitz et al {[}\url{https://doi.org/10.1111/j.0887-378X.2004.00327.x}{]} linked
+prediction of individual treatment effect on the knowledge of the patient's
+baseline risk, responsiveness to treatment, vulnerability to side-effects, and
+the utilities the patient places for different outcomes. Therefore, baseline
+risk, i.e.~the patient's true probability of having an outcome of
+interest---usually the outcome treatment is attempting to prevent---is already
+recognized as an important determinant of treatment effect. It sets an upper
+bound on how much treatment can have an effect on the individual. Low risk
+patients can only at most observe minimal treatment benefit before their risk is
+reduced to zero. On the other hand, high risk patients can achieve much higher
+benefits. Therefore, in the presence of a trully effective treatment, we would
+expect increasing absolute benefits. However, this is bound to be the case, in
+the absence of true effect modification.
+
+\end{document}

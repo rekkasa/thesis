@@ -47,4 +47,24 @@ underpowered. This can lead to falsely claiming absence of HTE or overestimating
 its magnitude [refs]. In addition, contrary to subgroup analyses, patients
 differ with regard to many baseline covariates simultaneously [Kent, BMJ
 2018]. However, evaluation of two-way or higher order interactions becomes
-underpowered at an explonential rate.
+underpowered very fast.
+
+Kravitz et al [https://doi.org/10.1111/j.0887-378X.2004.00327.x] linked
+prediction of individual treatment effect on the knowledge of the patient's
+baseline risk, responsiveness to treatment, vulnerability to side-effects, and
+the utilities the patient places for different outcomes. Therefore, baseline
+risk, i.e. the patient's true probability of having an outcome of
+interest---usually the outcome treatment is attempting to prevent--- without
+receiving the specific treatment is already recognized as an important
+determinant of treatment effect. It sets an upper bound on how large the
+treatment effect can be for individuals of the same risk. Low risk patients can
+only at most observe minimal treatment benefit before their risk is reduced to
+zero. On the other hand, high risk patients can achieve much higher
+benefits. Therefore, in the presence of a trully effective treatment and minimal
+effect modification, we would expect increasing absolute benefits with
+increasing baseline risk. In the presence of true effect modification,
+accurately modeling treatment-covariate interactions would result in adequate
+evaluation of HTE. However, simulations have shown that due to the low power for
+correctly estimating these interactions, these approaches require very large
+sample sizes. Modeling effect modifiers basically suffers from the same issues
+as subgroup analyses.
