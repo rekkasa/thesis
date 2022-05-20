@@ -12,10 +12,6 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# Preface {-}
-
-
-Thesis
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
