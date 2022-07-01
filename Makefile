@@ -7,3 +7,6 @@ pdf :
 
 docx :
 	R -e ' bookdown::render_book("index.Rmd", "bookdown::word_document2", quiet = TRUE, output_dir = "docs")'
+
+clean :
+	rm -rf docs/*

@@ -1,13 +1,11 @@
 --- 
-title: "Assessing treatment effect heterogeneity using baseline risk"
-subtitle: "Methodology and applications"
+title: "Baseline risk in medical decision making"
+subtitle: "From outcome prediction to the assessment of treatment effect heterogeneity"
 author: Alexandros Rekkas
-date: "`r Sys.Date()`"
+# date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
