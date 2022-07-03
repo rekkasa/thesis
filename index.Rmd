@@ -17,3 +17,10 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+# Welcome {-}
+
+This is the website for the PhD thesis titled "*Baseline risk in decision
+making: From outcome prediction to the assessment of treatment effect
+heterogeneity*". Visit the [github
+repository](https://github.com/rekkasa/thesis) for more information.
