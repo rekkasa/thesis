@@ -1,1 +1,6 @@
+fig:power
 introduction
+personalizing-outcome-risk
+personalizing-treatment-effect
+observational-data
+aims

@@ -1,2 +1,4 @@
 .Rhistory
 .scratch
+*.tiff
+_bookdown_files

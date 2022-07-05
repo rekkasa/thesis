@@ -72,7 +72,13 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#personalizing-outcome-risk"><i class="fa fa-check"></i><b>1.1</b> Personalizing outcome risk</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#personalizing-treatment-effect"><i class="fa fa-check"></i><b>1.2</b> Personalizing treatment effect</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#observational-data"><i class="fa fa-check"></i><b>1.3</b> Observational data</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#aims"><i class="fa fa-check"></i><b>1.4</b> Aims</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -92,32 +98,37 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Baseline risk is a crucial component of medical decision making. Because it
-provides personalized quantification of the likelihood for unwanted events, it
-is often used to guide treatment recommendations. For example in the European
-Society of Cardiology and the European Society of Hypertension guidelines of
-2018 for the management of arterial hypertension, treatment initiation is
-based—among other things—on the patient’s baseline 10-year cardiovascular
-risk [<a href="https://doi.org/10.1093/eurheartj/ehy339" class="uri">https://doi.org/10.1093/eurheartj/ehy339</a>]. Similarly, an algorithm for the
-treatment of osteoporosis has been suggested, based on the stratification of
-patients on their 10-year hip or major osteoporotic fracture risk
-[<a href="https://doi.org/10.1007/s00198-019-05176-3" class="uri">https://doi.org/10.1007/s00198-019-05176-3</a>].</p>
-<p>Best practices for developing prediction models, evaluating their performance,
-and guiding their application in practice have been central focus of
-methodological research [refs]. Usually, prediction models are evaluated on
-their discriminative performance, i.e. their ability to separate lower from
-higher risk patients, and their calibration, i.e. the agreement of predicted
-risk to observed event rates [Ewout book]. These measures—though they are
-useful for assessing the predictive performance of one or multiple candidate
-prediction models—are not informative when it comes to applying these models
-in practice. Baseline risk is only one of the crucial pieces required for
+<div id="personalizing-outcome-risk" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Personalizing outcome risk<a href="introduction.html#personalizing-outcome-risk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Baseline risk—the probability of a patient experiencing an outcome of interest
+without receiving the treatment under study based on a set of predifined
+baseline characteristics—is a crucial component of medical decision making.
+For example, in the European Society of Cardiology and the European Society of
+Hypertension guidelines of 2018 for the management of arterial hypertension,
+treatment initiation is based—among other things—on the patient’s baseline
+10-year cardiovascular risk
+[<a href="https://doi.org/10.1093/eurheartj/ehy339" class="uri">https://doi.org/10.1093/eurheartj/ehy339</a>]. Similarly, an algorithm for
+management of osteoporosis has been suggested, based on a patient’s osteoporotic
+fracture risk [<a href="https://doi.org/10.1007/s00198-019-05176-3" class="uri">https://doi.org/10.1007/s00198-019-05176-3</a>].</p>
+<p>Risk prediction models, i.e. mathematical functions relating the presence of the
+outcome of interest to a set of measured predictors (covariates)
+[<a href="https://heart.bmj.com/content/98/9/683" class="uri">https://heart.bmj.com/content/98/9/683</a>], are important empirical tools for the
+assessment of a patient’s baseline risk. Adequate evaluation of the prediction
+models’ performance in new patients is crucial. In most cases, this mainly
+focuses on the prediction models’ discriminative performance, i.e. their ability
+to separate lower from higher risk patients, and their calibration, i.e. the
+agreement of predicted risk to observed event rates [Ewout book;
+TRIPOD]. Measures of discrimination and calibration are useful for assessing the
+predictive performance of one or multiple candidate prediction models, however,
+are not informative regarding the added value of using these models for medical
+decision making. Baseline risk is only one of the crucial pieces required for
 predicting individual responses to treatment. Knowledge of the patients’
 responsiveness to treatment, their vulnerability to side-effects and their
 utilities for other relevant outcomes is necessary information required for
-making truly informed clinical decisions [Kravitz, 2004]. Our aim was to explore
-approaches that incorporate baseline risk as the basis for medical decision
-making, shifting the focus from outcome prediction to the evaluation of
-treatment effect heterogeneity.</p>
+making truly informed clinical decisions [Kravitz, 2004].</p>
+</div>
+<div id="personalizing-treatment-effect" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Personalizing treatment effect<a href="introduction.html#personalizing-treatment-effect" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In order to provide the most optimal medical care, doctors are advised to align
 their clinical practice with the results of well-conducted clinical trials, or
 the aggregated results from multiple such trials [Greenfield 2007]. This
@@ -130,7 +141,7 @@ patients. If a treatment causes a serious adverse event, then treating all
 patients on the basis of an observed overall positive treatment effect may be
 harmful for some [Rothwell, Lancet 1995; …].</p>
 <p>Conceptually, heterogeneity of treatment effect (HTE) is the variation of
-treatment effects on the individual level within the population
+treatment effects on the individual level across the population
 [<a href="https://doi.org/10.1111/j.0887-378X.2004.00327.x" class="uri">https://doi.org/10.1111/j.0887-378X.2004.00327.x</a>]. The identification and
 quantification of HTE is crucial for guiding medical decision making and lies at the
 core of patient-centered outcomes research. Despite HTE being widely
@@ -156,11 +167,18 @@ subgroup analyses has provided guidance on how these should be carried out
 or overestimating the effect size of a treatment-covariate interaction. The
 former because an existing interaction effect was smaller than the detectable
 effect size, the latter because of false positives introduced from multiple
-testing.</p>
-<p>Baseline risk, i.e. the probability—given measured characteristics—of
-experiencing the outcome of interest without receiving the treatment under
-study, is an important determinant of treatment effect [refs]. It sets an upper
-bound on the treatment effect size. Low risk patients can only experience
+testing. In Figure <span class="math inline">\(\ref{fig:power}\)</span> the statistical power for detecting an
+interaction effect of equal size to the main effect when the clinical trial is
+powered at 80% for the main effect is below 25%. This problem does not resolve
+with increased statistical power for the main effect.</p>
+<div class="figure"><span style="display:block;" id="fig:power"></span>
+<img src="Thesis_files/figure-html/power-1.png" alt="Statistical power for the detection of an interaction when the interaction effect size is between 0 and four times the main effect size. For simplicity, we assume equal number of treated and untreated patients and that patients are equally separated between the subgroup levels" width="100%" />
+<p class="caption">
+Figure 1.1: Statistical power for the detection of an interaction when the interaction effect size is between 0 and four times the main effect size. For simplicity, we assume equal number of treated and untreated patients and that patients are equally separated between the subgroup levels
+</p>
+</div>
+<p>Baseline risk is an important determinant of treatment effect [refs]. It sets an
+upper bound on the treatment effect size. Low risk patients can only experience
 minimal treatment benefit before their risk is reduced to zero, while high risk
 patients can benefit much more. This means that baseline risk can be used as a
 subgrouping variable for assessing HTE. For many common settings prediction
@@ -181,13 +199,16 @@ identified. For example, despite finding statistically significant subgroup
 effect evaluated on the relative scale, the absolute risk difference between the
 two groups may be so small that has no clinical relevance
 [<a href="http://dx.doi.org/10.1016/j.jclinepi.2013.11.003" class="uri">http://dx.doi.org/10.1016/j.jclinepi.2013.11.003</a>]. Therefore, in the presence
-of a trully effective treatment, effect heterogeneity should always be
+of a truly effective treatment, effect heterogeneity should always be
 anticipated on some scale [Dahabreh, IJE 2016], as baseline risk is bound to
 vary across trial patients. If effect modifiers are known and the available
 sample size provides adequate statistical power for evaluating
 treatment-covariate interactions, modeling these interactions would be the
 optimal approach for assessing HTE. However, this approach may lead to
 overfitting and unstable estimates for the interaction effects [Balan, JCE].</p>
+</div>
+<div id="observational-data" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Observational data<a href="introduction.html#observational-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Healthcare data is routinely collected by general practitioners, hospitals,
 insurance companies, and many other private or public bodies and is becoming
 increasingly available giving researchers access to massive amounts of patient
@@ -195,9 +216,9 @@ data. Theoretically, the aforementioned statistical power challenges for the
 evaluation of HTE would be largely mitigated if the analyses were performed on
 even a single such database. However, as this data is not being accumulated for
 research purposes, it suffers from many biases causing many commonly used
-methods to fail. Doctors prescribing a specific treatment expect—usually
-based on results from clinical trials—that it will be beneficial for the
-patient they are treating. This causes systematic differences in important
+methods to fail. Doctors prescribing a specific treatment expect—usually based
+on results from clinical trials—that it will be beneficial for the patient
+they are treating. This causes systematic differences in important
 characteristics among patients receiving different treatments and renders their
 comparison very challenging.</p>
 <p>If all relevant patient characteristics on which the treating physician based
@@ -254,72 +275,76 @@ previously unexplored comparisons.</p>
 <p>Observational databases provide access to massive numbers of “real-life”
 patients. This motivates the exploration of methods for the assessment of
 treatment effect heterogeneity in the observational setting despite the
-challenges inherent to this type of data. The statistical power problems related
-to subgroup analyses can still be present, as observational data is
+challenges inherent to this type of data. The statistical power problem related
+to multiple subgroup analyses can still be present, as observational data is
 high-dimensional, i.e. the number of measured patient characteristics increases
 with the number of patients. Attempting a treatment effect modeling approach,
 where treatment-covariate interactions are modeled for the prediction of
 individualized treatment benefits, suffers from the same statistical power
 issues and often results to highly variable estimates. Therefore, using baseline
 outcome risk as the subgrouping variable, can provide good insight of treatment
-effect heterogeneity in the observational setting, as well. Modern libraries for
-developing risk prediction models are available and—capitalizing on
-OMOP-CDM—can be easily applied across databases with millions of patients.</p>
-<p>The overall aim of this thesis is to explore approaches that incorporate
-baseline risk as the basis for medical decision making, shifting the focus from
-outcome prediction to the evaluation treatment effect heterogeneity. We will
-explore methods and applications in both the clinical trial and the
-observational setting. More specifically, the main research questions are:</p>
-<ul>
-<li>Aim 1: <em>How to develop and present a prediction model to be used in clinical
-practice?</em> We will explore the development of multi-purpose prediction models,
-i.e. models that can be used to predict patient risks for multiple
-outcomes. We will also demonstrate different approaches for their application
-in practice.</li>
-<li>Aim 2: <em>How to use risk estimates from a prediction model to assess treatment
-effect heterogeneity?</em> We will explore the literature for methods on the
-assessment of treatment effect heterogeneity. We will develop and apply a
-framework for risk-based assessment of treatment effect heterogeneity in the
-observational setting. Finally, we will explore methods for making
-individualized risk-based benefit predictions.</li>
-</ul>
-<p>In <strong>Chapter 2</strong> we develop a model for the prediction of 5-year recurrence risk
-in sentinel node positive melanoma patients, using data from nine European
-Organization for Research and Treatment of Cancer centers. We calibrate the
-recurrence model to predict 5-year risk of distant metastasis and overall
-mortality and develop a nomogram for graphical representation. The models are,
-then, extenrally validated.</p>
-<p>In <strong>Chapter 3</strong> we develop a model for the prediction of 28-day mortality for
-patients presenting at the emergency department with suspected COVID-19
-infection at four large Dutch hospitals between March and August, 2020. We
-predict 28-day admission to the intensive care unit by calibrating the mortality
-model. An easy to use web application is also supplied. We perform temporal
-validation to assess model performance using data between September and
-December, 2020.</p>
-<p>In <strong>Chapter 4</strong> we present the results of a scoping literature review of
+effect heterogeneity in the observational setting. Modern libraries for
+developing risk prediction models and for correcting for confounding are
+available and—capitalizing on OMOP-CDM—can be easily applied across
+databases with millions of patients.</p>
+</div>
+<div id="aims" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Aims<a href="introduction.html#aims" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The overall aim of this thesis is to explore the use of baseline risk prediction
+models as the basis for medical decision making. We will study and apply methods
+for the evaluation of treatment effect heterogeneity in both clinical trial data
+and observational data. The specific research aims are:</p>
+<ol style="list-style-type: decimal">
+<li>Explore the literature for existing predictive approaches to the assessment
+of treatment effect heterogeneity in the clinical trial setting. Development
+of a method categorization strategy is also very important.</li>
+<li>Develop and apply a standardized framework for risk-stratified assessment of
+treatment effect heterogeneity in observational data. Basing the framework on
+OMOP-CDM will enhance reproducibility and scalability of the analyses.</li>
+<li>Develop and compare methods for predicting personalized treatment effects
+using predicted baseline risk. The methods should first be evaluated in the
+clinical trial setting to generate “fair” comparisons.</li>
+<li>Develop statistical models that are easily applicable in clinical practice
+for the prediction of patient baseline risk of relevant outcomes in diseases.</li>
+</ol>
+<p>In <strong>Chapter 2</strong> we present the results of a scoping literature review of
 regression modeling approaches for the assessment of treatment effect
 heterogeneity in the clinical trial setting. The identified methods are divided
 into broader categories based on how they incorporate prognostic factors and
 treatment effect modifiers.</p>
-<p>In <strong>Chapter 5</strong> we develop a standardized scalable framework for the assessment
+<p>In <strong>Chapter 3</strong> we develop a standardized scalable framework for the assessment
 of treatment effect heterogeneity using a risk-stratified approach in the
 observational setting. We, also, develop the software for the execution of the
 framework in observational databases mapped to OMOP-CDM. We, finally,
 demonstrate the application of the framework, assessing treatment effect
 heterogeneity in first-line treatment for hypertension across three US claims
 databases.</p>
-<p>In <strong>Chapter 6</strong> we apply the standardized framework to evaluate effect
+<p>In <strong>Chapter 4</strong> we apply the standardized framework to evaluate effect
 heterogeneity of teripatide treatment compared to oral bisphosphonates in female
 patients above the age of 50 with established osteoporosis. We use different
 risk stratification approaches based on quantiles of predicted risk and
 externally derived risk thresholds for treatment. We evaluate the presence of
 residual confounding using sensitivity analyses.</p>
-<p>In <strong>Chapter 7</strong> we compare different risk-based methods for predicting
+<p>In <strong>Chapter 5</strong> we compare different risk-based methods for predicting
 individualized treatment effects using an extensive simulation study. We only
 consider the clinical trial setting were treatment is admistered at random.</p>
+<p>In <strong>Chapter 6</strong> we develop a model for the prediction of 5-year recurrence risk
+in sentinel node positive melanoma patients, using data from nine European
+Organization for Research and Treatment of Cancer centers. We calibrate the
+recurrence model to predict 5-year risk of distant metastasis and overall
+mortality and develop a nomogram for graphical representation. The models are,
+then, extenrally validated.</p>
+<p>In <strong>Chapter 7</strong> we develop a model for the prediction of 28-day mortality for
+patients presenting at the emergency department with suspected COVID-19
+infection at four large Dutch hospitals between March and August, 2020. We
+predict 28-day admission to the intensive care unit by calibrating the mortality
+model. An easy to use web application is also supplied. We perform temporal
+validation to assess model performance using data between September and
+December, 2020.</p>
 <p>Finally, in <strong>Chapter 8</strong> we present a general discussion along with perspectives on
 future work.</p>
 
+</div>
 </div>
             </section>
 
@@ -381,6 +406,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
