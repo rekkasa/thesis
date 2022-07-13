@@ -1,4 +1,5 @@
 fig:power
+fig:scale
 introduction
 personalizing-outcome-risk
 personalizing-treatment-effect

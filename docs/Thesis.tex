@@ -61,6 +61,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage[font=small,labelfont=bf]{caption}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -126,15 +127,15 @@ assessment of a patient's baseline risk. Adequate evaluation of the prediction
 models' performance in new patients is crucial. In most cases, this mainly
 focuses on the prediction models' discriminative performance, i.e.~their ability
 to separate lower from higher risk patients, and their calibration, i.e.~the
-agreement of predicted risk to observed event rates {[}Ewout book;
-TRIPOD{]}. Measures of discrimination and calibration are useful for assessing the
-predictive performance of one or multiple candidate prediction models, however,
-are not informative regarding the added value of using these models for medical
-decision making. Baseline risk is only one of the crucial pieces required for
-predicting individual responses to treatment. Knowledge of the patients'
-responsiveness to treatment, their vulnerability to side-effects and their
-utilities for other relevant outcomes is necessary information required for
-making truly informed clinical decisions {[}Kravitz, 2004{]}.
+agreement of predicted risk to observed event rates {[}Ewout book; TRIPOD{]}. Though
+measures of discrimination and calibration are useful for assessing the
+predictive performance of one or multiple prediction models, they do not provide
+insight on the added value of using these models for medical decision
+making. Baseline risk is only one of the crucial pieces required for predicting
+individual responses to treatment. Knowledge of the patients' responsiveness to
+treatment, their vulnerability to side-effects and their utilities for other
+relevant outcomes is necessary information required for making truly informed
+clinical decisions {[}Kravitz, 2004{]}.
 
 \hypertarget{personalizing-treatment-effect}{%
 \section{Personalizing treatment effect}\label{personalizing-treatment-effect}}
@@ -145,11 +146,11 @@ the aggregated results from multiple such trials {[}Greenfield 2007{]}. This
 approach implicitly assumes that all patients eligible for treatment experience
 the same effects (benefits and harms) of treatment as the reference trial
 population. However, the estimated treatment effect is often an average of
-heterogeneous treatment effects---treatment effects vary across patients---and,
-as such, may not be applicable to most patient subgroups, let alone individual
-patients. If a treatment causes a serious adverse event, then treating all
-patients on the basis of an observed overall positive treatment effect may be
-harmful for some {[}Rothwell, Lancet 1995; \ldots{]}.
+heterogeneous treatment effects and, as such, may not be applicable to most
+patient subgroups, let alone individual patients. If a treatment causes a
+serious adverse event, then treating all patients on the basis of an observed
+overall positive treatment effect may be harmful for some {[}Rothwell, Lancet
+1995; \ldots{]}.
 
 Conceptually, heterogeneity of treatment effect (HTE) is the variation of
 treatment effects on the individual level across the population
@@ -170,22 +171,22 @@ to assess. Patients differ in a vast number of characterstics which may or may
 not be relevant to modifying treatment responses. Identification of such patient
 characterstics can be quite complicated. In clinical trials it usually relies on
 the detection of statistically significant interactions of treatment with
-measured covariates (subgroup analyses). However, as clinical trials are usually
-only adequately powered to detect overall effects of a certain size, this kind
-of analyses can be problematic. This is already widely known and research in
-subgroup analyses has provided guidance on how these should be carried out
-{[}refs{]}. The lack of statistical power often results in falsely concluding
-``consistency'' of the treatment effect across several subpopulations of interest
-or overestimating the effect size of a treatment-covariate interaction. The
-former because an existing interaction effect was smaller than the detectable
-effect size, the latter because of false positives introduced from multiple
-testing. In Figure \ref{fig:power} the statistical power for detecting an
-interaction effect of equal size to the main effect when the clinical trial is
-powered at 80\% for the main effect is below 25\%. This problem does not resolve
-with increased statistical power for the main effect.
+measured covariates (subgroup analyses).
+
+As clinical trials are usually only adequately powered to detect overall effects
+of a certain size, this kind of analyses can be problematic. Existing guidance
+on carrying out subgroup analyses attempts to mitigate these issues {[}refs{]}. Lack
+of statistical power often results in falsely concluding ``consistency'' of the
+treatment effect across several subpopulations of interest or overestimating the
+effect size of a treatment-covariate interaction. The former because an existing
+interaction effect was smaller than the detectable effect size, the latter
+because of false positives introduced from multiple testing. In Figure
+\ref{fig:power} the statistical power for detecting an interaction effect of
+equal size to the main effect is below 30\%, despite the clinical trial being
+powered at 80\% for the detection of the overall effect.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{Thesis_files/figure-latex/power-1} \caption{Statistical power for the detection of an interaction when the interaction effect size is between 0 and four times the main effect size. For simplicity, we assume equal number of treated and untreated patients and that patients are equally separated between the subgroup levels}\label{fig:power}
+\includegraphics[width=1\linewidth]{Thesis_files/figure-latex/power-1} \caption{Statistical power for the detection of an interaction when the interaction effect size is between 0 and 4 times the main effect size. For simplicity, we assume equal number of treated and untreated patients and that patients are equally separated between the subgroup levels}\label{fig:power}
 \end{figure}
 
 Baseline risk is an important determinant of treatment effect {[}refs{]}. It sets an
@@ -208,9 +209,9 @@ risk may provide more informative absolute benefit predictions for individual
 patients.
 
 Depending on the scale treatment effect is measured, HTE may or may not be
-identified. For example, despite finding statistically significant subgroup
-effect evaluated on the relative scale, the absolute risk difference between the
-two groups may be so small that has no clinical relevance
+identified (Figure \ref{fig:scale}). For example, despite finding statistically
+significant subgroup effect evaluated on the relative scale, the absolute risk
+difference between the two groups may be so small that has no clinical relevance
 {[}\url{http://dx.doi.org/10.1016/j.jclinepi.2013.11.003}{]}. Therefore, in the presence
 of a truly effective treatment, effect heterogeneity should always be
 anticipated on some scale {[}Dahabreh, IJE 2016{]}, as baseline risk is bound to
@@ -219,6 +220,10 @@ sample size provides adequate statistical power for evaluating
 treatment-covariate interactions, modeling these interactions would be the
 optimal approach for assessing HTE. However, this approach may lead to
 overfitting and unstable estimates for the interaction effects {[}Balan, JCE{]}.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{Thesis_files/figure-latex/scale-1} \caption{Scale dependency of treatment effect heterogeneity. In the left panel a constant odds ratio of 0.8 is assumed. In the right panel a constant absolute risk reduction of 0.1 is assumed.}\label{fig:scale}
+\end{figure}
 
 \hypertarget{observational-data}{%
 \section{Observational data}\label{observational-data}}
@@ -256,17 +261,17 @@ subgroup effects. Sensitivity analyses searching for evidence of this systematic
 unmeasured imbalances have been proposed and can be of assistance in many
 situations {[}refs{]}.
 
-Another important problem with observational databases is that they are not
-compatible with each other. As anyone gathering routinely observed healthcare
-data did so in a way that was more convenient to them, a plethora of structures
-for the resulting databases arose. Diseases, treatments, medical exams and many
-more aspects of healthcare are often coded differently in different
-observational databases. In addition, more fundamental disparities between
-databases also factor in database incopatibility: different types of information
-are recorded in different databases. Different patient characteristics are
-captured---at different levels of detail---in a general practitioner database,
-in a hospital medical record or in an administrative claims database. This means
-that combining results from multiple databases is not a simple task.
+Another important problem with observational databases is that they use
+different architectures. As anyone gathering routinely observed healthcare data
+did so in a way that was more convenient to them, a plethora of structures for
+the resulting databases arose. Diseases, treatments, medical exams and many more
+aspects of healthcare are often coded differently in different observational
+databases. In addition, more fundamental disparities between databases also
+factor in database incopatibility: different types of information are recorded
+in different databases. Different patient characteristics are captured---at
+different levels of detail---in a general practitioner database, in a hospital
+medical record or in an administrative claims database. This means that
+combining results from multiple databases is not a simple task.
 
 One of the solutions put forward for handling database incompatibility was the
 creation of the Observational Medical Outcomes Partnership Common Data Model
