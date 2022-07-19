@@ -1,0 +1,4 @@
+# Individualized treatment effect was predicted best by modeling baseline risk in interaction with treatment assignment
+
+\vspace*{\fill}\par
+\pagebreak

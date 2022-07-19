@@ -5,6 +5,11 @@ figures/ScalePlot.tiff : code/ScalePlot.R
 	$<
 
 docs/Thesis.pdf : introduction.Rmd \
+	review.Rmd\
+	simulation.Rmd\
+	framework.Rmd\
+	melanoma.Rmd\
+	covid.Rmd\
 	figures/PowerPlot.tiff \
 	figures/ScalePlot.tiff \
 	preamble.tex

@@ -9,3 +9,8 @@ language:
 rmd_files:
   - "index.Rmd"
   - "introduction.Rmd"
+  - "review.Rmd"
+  - "simulation.Rmd"
+  - "framework.Rmd"
+  - "melanoma.Rmd"
+  - "covid.Rmd"

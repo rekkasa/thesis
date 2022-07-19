@@ -1,0 +1,6 @@
+# The EORTC-DeCOG nomogram
+
+\vspace*{\fill}\par
+\pagebreak
+
+\lipsum[1-4]

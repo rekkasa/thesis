@@ -2,3 +2,4 @@
 .scratch
 *.tiff
 _bookdown_files
+*.log

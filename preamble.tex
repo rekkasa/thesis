@@ -1,2 +1,13 @@
 \usepackage{booktabs}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{lipsum}
+
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filleft}
+  [\vspace{1ex}\titlerule]
+  \pagebreak
+

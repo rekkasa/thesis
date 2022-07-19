@@ -5,3 +5,8 @@ personalizing-outcome-risk
 personalizing-treatment-effect
 observational-data
 aims
+predictive-approaches-to-heterogeneous-treatment-effects-a-scoping-review
+individualized-treatment-effect-was-predicted-best-by-modeling-baseline-risk-in-interaction-with-treatment-assignment
+a-standardized-framework-for-risk-based-assessment-of-treatment-effect-heterogeneity-in-observational-healthcare-databases
+the-eortc-decog-nomogram
+covid-outcome-prediction-in-the-emergency-department
