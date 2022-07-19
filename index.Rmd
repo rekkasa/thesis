@@ -4,7 +4,6 @@ subtitle: "From outcome prediction to the assessment of treatment effect heterog
 author: Alexandros Rekkas
 # date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
@@ -18,7 +17,7 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
-# Welcome {-}
+# Welcome {.unlisted .unnumbered}
 
 This is the website for the PhD thesis titled "*Baseline risk in decision
 making: From outcome prediction to the assessment of treatment effect

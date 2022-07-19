@@ -1,5 +1,8 @@
 # Introduction {#introduction}
 
+\vspace*{\fill}\par
+\pagebreak
+
 ## Personalizing outcome risk
 
 Baseline risk---the probability of a patient experiencing an outcome of interest
@@ -211,18 +214,18 @@ models as the basis for medical decision making. We will study and apply methods
 for the evaluation of treatment effect heterogeneity in both clinical trial data
 and observational data. The specific research aims are:
 
-1. Explore the literature for existing predictive approaches to the assessment
-   of treatment effect heterogeneity in the clinical trial setting. Development
-   of a method categorization strategy is also very important.
-2. Develop and apply a standardized framework for risk-stratified assessment of
-   treatment effect heterogeneity in observational data. Basing the framework on
-   OMOP-CDM will enhance reproducibility and scalability of the analyses.
-4. Develop and compare methods for predicting personalized treatment effects
-   using predicted baseline risk. The methods should first be evaluated in the
-   clinical trial setting to generate "fair" comparisons.
-5. Develop statistical models that are easily applicable in clinical practice
-   for the prediction of patient baseline risk of relevant outcomes in diseases.
-
+1. *Systematically organize the current literature on predictive approaches to
+   treatment effect heterogeneity*. We are going to focus on regression modeling
+   approaches applied in clinical trial data. Methods will be categorized based
+   on their definition of patient similarity.
+2. *Develop risk-based predictive approaches to the assessment of treatment
+   effect heterogeneity*. We are going to explore new subgrouping methods based
+   on risk stratification along with more personalized approaches, focusing on
+   both the observational and clinical trial setting. Scalability and
+   reproducibility of the considered methods are crucial.
+3. *Apply risk-based methods to better guide medical decisions*. We are going to
+   develop baseline risk prediction models in several case studies easily
+   applicable in clinical practice.
 
 In **Chapter 2** we present the results of a scoping literature review of
 regression modeling approaches for the assessment of treatment effect
