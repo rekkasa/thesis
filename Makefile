@@ -4,12 +4,14 @@ figures/PowerPlot.tiff : code/PowerPlot.R
 figures/ScalePlot.tiff : code/ScalePlot.R
 	$<
 
-docs/Thesis.pdf : introduction.Rmd \
-	review.Rmd\
-	simulation.Rmd\
-	framework.Rmd\
-	melanoma.Rmd\
-	covid.Rmd\
+docs/Thesis.pdf : ch1_introduction.Rmd \
+	ch2_review.Rmd\
+	ch3_framework.Rmd\
+	ch4_simulation.Rmd\
+	ch5_melanoma.Rmd\
+	ch6_covid.Rmd\
+	ch7_osteoporosis.Rmd\
+	ch8_discussion.Rmd\
 	figures/PowerPlot.tiff \
 	figures/ScalePlot.tiff \
 	preamble.tex
