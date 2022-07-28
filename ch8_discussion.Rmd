@@ -50,20 +50,7 @@ risk increase for the adverse event in question. Also, the clinical relevance of
 following the treatment assignment rule cannot be easily evaluated
 (**elaborate!!**).
 
-### Limitations
-
-A large number of methods have been suggested in medical research for the
-evaluation of treatment effect heterogeneity.  However, treatment effect
-heterogeneity is not a problem specific to healthcare research with important
-advances being made in economics, social sciences, and other fields, as well. In
-addition, the increasing availability of observational data from massive
-databases capturing a large proportion of patients' interaction with the
-healthcare system has provided additional challenges, with confounding,
-suboptimal data capture, local or temporal inconsistencies only being a few of
-them. All these have resulted on the suggestion of many different methods for
-the evaluation of treatment effect heterogeneity, many of which may have not
-been captured in our literature review. Our focus was on the clinical trial
-setting and mainly regression-based methods were considered.
+### Other categorization methods in the literature
 
 The above categorization of methods for the assessment of treatment effect
 heterogeneity is not the only possible. When focusing on subgroup analyses
@@ -76,25 +63,63 @@ attempt to achieve the highest overall benefit across the entire population. In
 the second case, the objective is the idertification of a set of effect
 modifiers that qualitatively interact with treatment.
 
-In a more technical approach focusing mainly on tree-based methods,
+The literature review proposed a general approach for categorizing methods
+evaluating treatment effect heterogeneity. However, more thorough separation of
+these methods can also be considered. For example in a more technical approach
+focusing mainly on tree-based methods,
 [Kunzel](https://doi.org/10.1073/pnas.1804597116) separated existing staging
 methods into A and S-learners while also suggesting a new approach, the
 X-learners. The suggested methods differred in the way they used to recalibrate
 the initially derived estimates to estimate conditional average treatment
-effects. Assuming binary treatment assignment, A-learners fit treatment-arm
-specific models before estimating individualized treatment effects as their
-difference. S-learners include treatment assignment in the development of the
-tree-based model. They estimate conditional average treatment effect as the
-differnce of between setting the treatment indicator to control and active
-treatment. Finally, their proposed X-learners, use first-stage outcome models
-separately fitted in each treatment arm to impute coutnerfactual outcomes, thus
-generating an "observed" treatment effect. Any regular modeling approach can
-then be used to estimate treatment effects.
+effects. These suggested categories can be considered as further separation of
+treatment effect modeling methods. Assuming binary treatment assignment,
+A-learners fit treatment-arm specific models before estimating individualized
+treatment effects as their difference. S-learners include treatment assignment
+in the development of the tree-based model. They estimate conditional average
+treatment effect as the differnce of between setting the treatment indicator to
+control and active treatment. Finally, their proposed X-learners, use
+first-stage outcome models separately fitted in each treatment arm to impute
+coutnerfactual outcomes, thus generating an "observed" treatment effect. Any
+regular modeling approach can then be used to estimate treatment effects.
+
+### Limitations
+
+The analyzed literature was identified through a mix of systematic literature
+search and suggested literature identified by an expert panel. Though this may
+have resulted in a more targeted initial selection of reviewed publications, it
+is possible that not all of the targeted literature was captured. However, the
+main finding of the review, i.e. a systematic separation of the predictive
+methods in the evaluation of treatment effect heterogeneity, should be quite
+robust against missing citations. In any way, treatment effect heterogeneity
+being a focal point of current research, literature has been growing rapidly
+since the presented review was carried out (**need citations??**).
+
+Evaluation of reatment effect heterogeneity is not a problem specific to
+healthcare research with important advances being made in economics, social
+sciences, and other fields, as well. In addition, the increasing availability of
+observational data from massive databases capturing a large proportion of
+patients' interaction with the healthcare system has provided additional
+challenges, with confounding, suboptimal data capture, local or temporal
+inconsistencies only being a few of them. All these have resulted on the
+suggestion of many different methods for the evaluation of treatment effect
+heterogeneity, many of which may have not been captured in the current literature
+review. Our focus was on the clinical trial setting and mainly regression
+modeling methods were considered.
 
 ### Future research
 
-Future research should attempt to better capture the expanding literature, and
-adequately summarize it to identify gaps and also cross-pollinate
-(**rephrase!!**) among the different fields working on what essentially can be
-seen as the same problem (**rephrase!!**). The categorization methods provided
-here could help (**continue!!**)...
+Several future research goals can be identified. Most importantly, a review of
+the fast-growing literature in the observational setting using the suggested
+categorization approach needs to be carried out. Due to the added complexity in
+this setting (large patient numbers, large number of captured covariates, data
+quality issues, and many more) focus has shifted from regression modeling
+methods to more automated machine-learning approaches. Therefore, it can be
+expected that treatment effect modeling and optimal treatment regime methods are
+more prominent in this setting.
+
+In addition, literature search should expand to capture methods suggested in
+other research fields. In this way, similar methods developed under different
+settings can be unified and transferred among research fields. The
+categorization approach suggested can be used to guide this endeavor, while also
+it can be further generalized to account for the fundamental differences between
+settings.
